@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Title</th>
+        <th scope="col">Body</th>
+        <th scope="col">Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts; let i = index">
+        <th>{{ i + 1 }}</th>
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-sm" (click)="editPost(post)">Edit</button>
+            <button class="btn btn-danger btn-sm mx-1" (click)="deletePost(post)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
